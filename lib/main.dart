@@ -10,24 +10,52 @@ class FoodApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text("Food App"),
+            title: const Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: "Food",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "App",
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            backgroundColor: Colors.orange,
+            centerTitle: true,
             bottom: const TabBar(
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.black54,
+              indicatorColor: Colors.red,
+              indicatorWeight: 4.0,
               tabs: [
-                Tab(icon: Icon(Icons.local_pizza), text: "Pizza"),
-                Tab(icon: Icon(Icons.fastfood), text: "Burger"),
-                Tab(icon: Icon(Icons.icecream), text: "Ice Cream"),
+                Tab(text: "Pizza"),
+                Tab(text: "Burger"),
+                Tab(text: "Ice Cream"),
               ],
             ),
           ),
-          body: const TabBarView(
+          body: TabBarView(
             children: [
-              Icon(Icons.local_pizza, size: 100, color: Colors.red),
-              Icon(Icons.fastfood, size: 100, color: Colors.orange),
-              Icon(Icons.icecream, size: 100, color: Colors.blue),
+              Image.asset("assets/pizza.png.jpg"), // Pizza image
+              Image.asset("assets/burger.png.jpg"), // Burger image
+              Image.asset("assets/icecream.png.jpg"), // Ice Cream image
             ],
           ),
         ),
