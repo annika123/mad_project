@@ -6,6 +6,7 @@ import 'package:food_delivery_app/screens/menu_screen.dart';
 import 'package:food_delivery_app/screens/profile_screen.dart';
 import 'package:provider/provider.dart';
 
+
 void main() {
   runApp(FoodDeliveryApp());
 }
